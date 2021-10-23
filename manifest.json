@@ -1,0 +1,31 @@
+{
+    "name": "Cryze的浏览器工具",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Cryze的浏览器工具",
+    "browser_action": {
+        "default_icon": "logo.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "persistent": true,
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [{
+        "all_frames": true,
+        "matches": ["*://*/*"],
+        "js": [
+            "lib/jquery/jquery-1.8.0.min.js",
+            "lib/xlsx/Blob.js",
+            "lib/xlsx/FileSaver.js",
+            "lib/xlsx/xlsx.core.min.js",
+            "lib/jquery/jquery.qrcode.min.js",
+            "lib/jquery/jquery.simplemodal.js",
+            "content_scripts.js"
+        ],
+        "css":["content_css.css"]
+    }],
+    "permissions": [
+        "tabs", "webNavigation","contextMenus"
+    ]
+}

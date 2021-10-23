@@ -1,0 +1,75 @@
+.my-chrome-ext.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.my-chrome-ext.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.my-chrome-ext.btn-primary:hover 
+.my-chrome-ext.btn-primary:focus 
+.my-chrome-ext.btn-primary:active {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+.my-chrome-ext.export{
+    position: absolute;
+    top:5px;
+    right: 5px;
+}
+.simplemodal-overlay{
+    background-color: #000;
+}
+.simplemodal-container{
+    background-color: #fff;
+    
+}
+.my_chrome_ext_modal_title{
+    height:35px;
+    line-height: 35px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #F4F4F4;
+
+}
+.my_chrome_ext_modal_title>.simplemodal-close{
+    float: right;
+    text-align: center;
+    color:red; 
+    
+}
+
+.float-left{
+    float: left;
+}
+.my_chrome_ext_value{
+    padding-right:20px;
+    vertical-align: middle;
+    line-height: 16px;
+}
+.my_chrome_ext_value{
+    vertical-align: middle;
+    line-height: 16px;
+}
