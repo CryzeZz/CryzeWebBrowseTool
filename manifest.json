@@ -28,4 +28,16 @@
     "permissions": [
         "tabs", "webNavigation","contextMenus"
     ]
+    ,
+    "web_accessible_resources":[
+        "lib/xlsx/Blob.js",
+        "lib/xlsx/FileSaver.js",
+        "lib/xlsx/xlsx.core.min.js",
+
+        "lib/xlsx/easyui.xlsx.js",
+        "lib/xlsx/bootstrapTable.xlsx.js",
+        "lib/xlsx/extjs.xlsx.js",
+
+        "lib/xlsx/my_chrome_ext_exportDatagrid_local.js"
+    ]
 }

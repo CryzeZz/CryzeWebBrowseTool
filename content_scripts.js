@@ -21,6 +21,12 @@
     function GCELog(msg){
         return console.log('%c CryzeZzChromeExtention: %c '+msg,'color:#2866bd;','color:#000;')
     }
+    function LoadLocalJS(url,charset,text,key){
+        console.log("before",url)
+        url=chrome.runtime.getURL(url)
+        console.log("after",url)
+        LoadJS(url,charset,text,key);
+    }
     function LoadJS(url,charset,text,key){
         var script = document.createElement('script');
         script.type = 'text/javascript';
@@ -94,7 +100,19 @@
                 getObj('.datagrid-view>table,.bootstrap-table>.fixed-table-container>.fixed-table-body>.table,.x-grid-panel',function($dgs){
                     if ($dgs.length>0){
                         if(!exprotDatagridInited){
-                            LoadJS('//ttykx.com/jslib/xlsx/my_chrome_ext_exportDatagrid.js','utf-8');
+                            //LoadJS('//ttykx.com/jslib/xlsx/my_chrome_ext_exportDatagrid.js','utf-8');
+
+
+
+                            LoadLocalJS('lib/xlsx/Blob.js','utf-8');
+                            LoadLocalJS('lib/xlsx/FileSaver.js','utf-8');
+                            LoadLocalJS('lib/xlsx/xlsx.core.min.js','utf-8');
+
+                            LoadLocalJS('lib/xlsx/easyui.xlsx.js','utf-8');
+                            LoadLocalJS('lib/xlsx/bootstrapTable.xlsx.js','utf-8');
+                            LoadLocalJS('lib/xlsx/extjs.xlsx.js','utf-8');
+
+                            LoadLocalJS('lib/xlsx/my_chrome_ext_exportDatagrid_local.js','utf-8');
                             exprotDatagridInited=true;
                         }else{
                             LoadJS('','','my_chrome_ext_dgexport_addBtn()');
