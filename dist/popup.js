@@ -1,0 +1,1 @@
+console.log("popup"),$(function(){console.log("popup-$.ready"),$("#random").html(Math.random())});
