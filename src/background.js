@@ -24,6 +24,16 @@ chrome.contextMenus.create({
 }, function () {
     console.log('contextMenus share2QRCode are create.');
 });
+
+chrome.contextMenus.create({
+    type: 'normal',
+    title: '导出html表格',
+    id: 'exportHtmlTable',
+    contexts: ["selection", "link", "editable", "image", "video", "audio","all"],
+    onclick: genericOnClick
+}, function () {
+    console.log('contextMenus exportHtmlTable are create.');
+});
  
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {//监听来自content_scripts.js的消息并作出响应
     var f = qqmail[request.cmd];

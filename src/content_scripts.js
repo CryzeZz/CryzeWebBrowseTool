@@ -91,6 +91,7 @@
         chrome.runtime.sendMessage({cmd:cmd, par:par}, cb);
     };
     var exprotDatagridInited=false;
+    var exprotHtmlTableInited=false;
     function onContextMenuHandler(request){  //所有菜单点击事件
         console.log(request,window.location.href)
         if ((request.info.frameUrl && request.info.frameUrl!=window.location.href)||(!request.info.frameUrl&& request.info.pageUrl && request.info.pageUrl!=window.location.href)){
@@ -158,6 +159,32 @@
     
                     console.log({type,text})
                 }
+            }else if (request.contextMenuId=='exportHtmlTable'){ //导出html表格
+                getObj('table:visible',function($tbls){
+                    if ($tbls.length>0){
+                        if(!exprotHtmlTableInited){
+                            //LoadJS('//ttykx.com/jslib/xlsx/my_chrome_ext_exportDatagrid.js','utf-8');
+
+                            LoadLocalJS('lib/xlsx/Blob.js','utf-8');
+                            LoadLocalJS('lib/xlsx/FileSaver.js','utf-8');
+                            LoadLocalJS('lib/xlsx/xlsx.core.min.js','utf-8');
+                            //LoadLocalJS('lib/jquery/jquery-1.8.0.min.js','utf-8');
+                            
+                            var jq_url=chrome.runtime.getURL('lib/jquery/jquery-1.8.0.min.js')
+                            LoadJS('','','var my_chrome_ext_jquery_url="'+jq_url+'";');
+
+                            LoadLocalJS('lib/xlsx/my_chrome_ext_exportHtmlTable_local.js','utf-8');
+                            exprotHtmlTableInited=true;
+                        }else{
+                            LoadJS('','','my_chrome_ext_tableexport_addBtn()');
+                        }
+                        
+                    }
+    
+                },100,0,1);
+
+
+                
             }
         }
 
